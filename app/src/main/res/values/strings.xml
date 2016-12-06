@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">UZ tickets alert</string>
+    <string name="search_hint">From</string>
+    <string name="pick_date">Pick a date</string>
+</resources>
