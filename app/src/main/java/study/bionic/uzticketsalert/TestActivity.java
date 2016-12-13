@@ -10,10 +10,6 @@ import android.widget.TextView;
 import study.bionic.uzticketsalert.db.DbContract;
 import study.bionic.uzticketsalert.db.DbHelper;
 
-/**
- * Created by admin on 27.11.2016.
- */
-
 public class TestActivity extends AppCompatActivity {
 
     @Override
@@ -32,16 +28,16 @@ public class TestActivity extends AppCompatActivity {
 //        };
 
 
-        DbHelper mDbHelper = new DbHelper(this);
+        DbHelper mDbHelper = DbHelper.getInstance(getApplicationContext());
 
         SQLiteDatabase rdb = mDbHelper.getReadableDatabase();
         String[] columns = {
-                DbContract.FeedEntry._ID,
-                DbContract.FeedEntry.COLUMN_NAME_ENTRY_ID,
-                DbContract.FeedEntry.COLUMN_NAME_TITLE
+                DbContract.StationNames._ID,
+                DbContract.StationNames.COLUMN_NAME_STATION_ID,
+                DbContract.StationNames.COLUMN_NAME_TITLE_EN
         };
         Cursor cursor = rdb.query(
-                DbContract.FeedEntry.TABLE_NAME,
+                DbContract.StationNames.TABLE_NAME,
                 columns,
                 null,
                 null,
@@ -50,9 +46,9 @@ public class TestActivity extends AppCompatActivity {
                 null
         );
         try {
-            int cID = cursor.getColumnIndexOrThrow(DbContract.FeedEntry._ID);
-            int cEntryID = cursor.getColumnIndexOrThrow(DbContract.FeedEntry.COLUMN_NAME_ENTRY_ID);
-            int cTitle = cursor.getColumnIndexOrThrow(DbContract.FeedEntry.COLUMN_NAME_TITLE);
+            int cID = cursor.getColumnIndexOrThrow(DbContract.StationNames._ID);
+            int cEntryID = cursor.getColumnIndexOrThrow(DbContract.StationNames.COLUMN_NAME_STATION_ID);
+            int cTitle = cursor.getColumnIndexOrThrow(DbContract.StationNames.COLUMN_NAME_TITLE_EN);
             String result = "Cursor result:";
             while (cursor.moveToNext()) {
                 result += "\n"
@@ -65,16 +61,16 @@ public class TestActivity extends AppCompatActivity {
             cursor.close();
         }
 
-        AutoCompleteTextView from = (AutoCompleteTextView) findViewById(R.id.fromStation);
-        AutoCompleteTextView to = (AutoCompleteTextView) findViewById(R.id.toStation);
+        AutoCompleteTextView from = (AutoCompleteTextView) findViewById(R.id.autoCompleteFrom);
+        AutoCompleteTextView to = (AutoCompleteTextView) findViewById(R.id.autoCompleteTo);
 
-        AutoCompleteAdapter fromAdapter = new AutoCompleteAdapter(this, null, true, testView1);
-        AutoCompleteAdapter toAdapter = new AutoCompleteAdapter(this, null, true, testView2);
+//        AutoCompleteAdapter fromAdapter = new AutoCompleteAdapter(this, null, true, testView1);
+//        AutoCompleteAdapter toAdapter = new AutoCompleteAdapter(this, null, true, testView2);
 
-        from.setAdapter(fromAdapter);
-        to.setAdapter(toAdapter);
-        from.setOnItemClickListener(fromAdapter);
-        to.setOnItemClickListener(toAdapter);
+//        from.setAdapter(fromAdapter);
+//        to.setAdapter(toAdapter);
+//        from.setOnItemClickListener(fromAdapter);
+//        to.setOnItemClickListener(toAdapter);
 
     }
 }

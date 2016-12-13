@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#424242"/>
+
+    <TextView
+        android:id="@+id/train_station_from"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:text="train_station_from"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        />
+
+    <TextView
+        android:id="@+id/train_station_till"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:text="train_station_till"
+        android:layout_below="@+id/train_station_from"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/train_departue"
+        android:text="train_departue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/train_station_till"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:id="@+id/train_arrival"
+        android:text="train_arrival"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/train_departue"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:id="@+id/tickets_title"
+        android:text="Tickets available"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/train_arrival"
+        />
+
+    <TextView
+        android:id="@+id/tickets_class1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/train_arrival"
+        android:layout_toRightOf="@+id/tickets_title"
+        android:layout_toEndOf="@+id/tickets_title"
+        android:paddingLeft="8dp"/>
+
+    <TextView
+        android:id="@+id/tickets_class2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/train_arrival"
+        android:layout_toRightOf="@+id/tickets_class1"
+        android:layout_toEndOf="@+id/tickets_class1"
+        android:paddingLeft="8dp"/>
+
+    <TextView
+        android:id="@+id/tickets_class3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/train_arrival"
+        android:layout_toRightOf="@+id/tickets_class2"
+        android:layout_toEndOf="@+id/tickets_class2"
+        android:paddingLeft="8dp"/>
+
+    <TextView
+        android:id="@+id/train_number"
+        android:text="train_number"
+        android:textSize="24sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:padding="16dp"/>
+
+</RelativeLayout>
+

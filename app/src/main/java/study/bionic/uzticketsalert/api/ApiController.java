@@ -1,11 +1,13 @@
 package study.bionic.uzticketsalert.api;
 
 import android.app.Application;
+import android.util.Log;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import study.bionic.uzticketsalert.R;
 
 public class ApiController extends Application {
 
@@ -23,7 +25,7 @@ public class ApiController extends Application {
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.1.102/app/")
+                .baseUrl(getString(R.string.base_url))
                 .client(client)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
